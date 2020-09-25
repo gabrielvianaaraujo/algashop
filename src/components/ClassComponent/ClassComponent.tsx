@@ -24,7 +24,6 @@ class ClassComponent extends Component<{name: string}> {
 
     render() {
         console.log("render reached");
-        
         return (
             <div>
                 <p>Name: {this.state.name} </p> 
