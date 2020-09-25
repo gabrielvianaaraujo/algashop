@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './TestComponent.css';
 
 
 const TestComponent = (props: {name: string}) => {
 
     const [age, setAge] = useState(18);
+
+    useEffect(() => {
+        console.log('Component was created');
+    }, []);
+
+    useEffect(() => {
+        console.log('Age has been updated: ' + age);
+    }, [age]);
 
     return(
         <div className="TestComponent">Olá {props.name}, {age}

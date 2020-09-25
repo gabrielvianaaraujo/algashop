@@ -5,11 +5,12 @@ class ClassComponent extends Component<{name: string}> {
     constructor(props: any){
         super(props);
         console.log("constructor  reached");
-        
+        this.setAge = this.setAge.bind(this);
     }
 
     state = {
-        name: "Mundo!!"
+        name: "Gabriel",
+        age: 0
     }
 
     componentDidMount(){
@@ -22,14 +23,21 @@ class ClassComponent extends Component<{name: string}> {
         
     }
 
+    setAge(){
+        console.log(this.state.age);
+        let age : Number;
+        age = this.state.age + 1;
+        this.setState({age : age});
+        console.log(this.state.age);
+    }
+
     render() {
         console.log("render reached");
         return (
             <div>
                 <p>Name: {this.state.name} </p> 
-                <button onClick = {() => {
-                    this.setState({name: this.props.name})
-                }}>CLick me</button>
+                <p>Name: {this.state.age} </p>
+                <button onClick = {() => this.setAge()}> + </button>
             </div>
         );
     }
