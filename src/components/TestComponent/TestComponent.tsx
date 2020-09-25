@@ -2,9 +2,9 @@ import React from 'react';
 import './TestComponent.css';
 
 
-const TestComponent = () => {
+const TestComponent = (props: {name: string}) => {
     return(
-        <div className="TestComponent">Test Component !!!</div>
+        <div className="TestComponent">Olá {props.name} !!!</div>
     )
 }
 
