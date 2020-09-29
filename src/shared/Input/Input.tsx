@@ -9,7 +9,7 @@ declare interface InputProps extends React.InputHTMLAttributes<HTMLInputElement>
     return <div className="AppInput">
       <label>
         <span>{ props.label }</span>
-        <input
+        <input 
           {...props}
         />
       </label>
